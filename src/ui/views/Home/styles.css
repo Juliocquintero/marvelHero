@@ -1,0 +1,9 @@
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  /* background-color: #0b0930; */
+  gap: 2rem;
+  padding-top: 2rem;
+}
