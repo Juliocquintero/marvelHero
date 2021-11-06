@@ -4,31 +4,33 @@ import DataContext from '../../../hoc/context/dataContext';
 import HeroCard from '../../components/HeroCard';
 import Loader from '../../components/Loader';
 import MessageError from '../../components/messageError';
-import InputFilter from './Filter';
-import { HTitle } from './styles';
+
+import { DefaultResult, HomeWrapper, HTitle } from './styles';
 import './styles.css';
 
 const Home = () => {
   const { data, error, loading, updateData } = useContext(DataContext);
-  return (
-    <div className="App">
-      <InputFilter />
-      <HTitle>Charachers</HTitle>
 
+  return (
+    <HomeWrapper>
+      <HTitle>Charachers</HTitle>
       {error && <MessageError error={error} />}
       <InfiniteScroll
         dataLength={data.length || 1500}
         next={updateData}
         hasMore={true}
         className="cards-wrapper "
-        scrollThreshold="50px"
+        scrollThreshold="100px"
       >
         {data?.map((el) => (
           <HeroCard hero={el} key={`${el.id}`} />
         ))}
       </InfiniteScroll>
       {loading && <Loader />}
-    </div>
+      {data.length < 1 && !loading && (
+        <DefaultResult>No se encontraron coincidencias...</DefaultResult>
+      )}
+    </HomeWrapper>
   );
 };
 

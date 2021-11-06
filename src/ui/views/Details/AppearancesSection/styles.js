@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FONTSIZES } from '../../../../styles/constant';
 
 export const AppearancesList = styled.div`
   display: grid;
@@ -39,4 +40,8 @@ export const ListName = styled.span`
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
+`;
+
+export const ListCount = styled.span`
+  font-size: ${FONTSIZES.cards};
 `;

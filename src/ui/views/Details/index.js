@@ -6,10 +6,11 @@ import Hero from './Hero';
 import { DetailsWrapper, ReturnButton } from './styles';
 
 const HeroDetails = () => {
-  const { contentViewed } = useContext(DataContext);
+  const { contentViewed, handleReturnToHome } = useContext(DataContext);
   const { thumbnail, name, description, urls } = contentViewed;
   let history = useHistory();
   const returnToHome = () => {
+    handleReturnToHome();
     history.push('');
   };
   return (

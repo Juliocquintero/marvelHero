@@ -8,7 +8,7 @@ const Hero = ({ thumbnail, name, description, urls }) => {
     <div>
       <HeroWrapper>
         <Image src={`${thumbnail?.path}.${thumbnail?.extension} `} alt={name} />
-        <Name>{name}</Name>
+        <Name nameLength={name}>{name}</Name>
         <Description>{description || defaultDescription}</Description>
         <ButtonMore href={wiki?.url || details?.url} target="_blank" rel="noreferrer">
           <span>LISTEN NOW</span>

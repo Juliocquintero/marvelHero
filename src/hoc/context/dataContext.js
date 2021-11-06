@@ -7,6 +7,10 @@ const DataProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [pageSearch, setPageSearch] = useState(0);
   const [contentViewed, setContentViewed] = useState({});
+  const [searchInHome, setSearchInHome] = useState('');
+  const [searchInDetails, setSearchInDetails] = useState('');
+  const [searchIsActive, setSearchIsActive] = useState(false);
+  const [detailSearchList, setDetailSearchList] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const PUBLIC_KEY = `17ad198f540be002a0cd5b1d6a016369`;
@@ -25,16 +29,16 @@ const DataProvider = ({ children }) => {
 
   useEffect(() => {
     setLoading(true);
-
     useFetch
       .getData(urlDefault)
       .then((data) => {
         setData(data);
         setPageSearch(pageSearch + 1);
       })
-      .catch((error) => setError(error));
-
-    setLoading(false);
+      .catch((error) => setError(error))
+      .finally(() => {
+        setLoading(false);
+      });
 
     // eslint-disable-next-line
   }, []);
@@ -43,19 +47,41 @@ const DataProvider = ({ children }) => {
     setContentViewed(data);
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e, inHome) => {
     const PARAMSTOSEARCH = e.target.value;
     const urlWithParams = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${PARAMSTOSEARCH}&ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`;
     const url = PARAMSTOSEARCH === '' ? urlDefault : urlWithParams;
     setLoading(true);
-    useFetch
-      .getData(url)
-      .then((data) => {
-        setData(data);
-      })
-      .catch((error) => setError(error));
+    if (inHome) {
+      setSearchInHome(PARAMSTOSEARCH);
+      setDetailSearchList([]);
+      useFetch
+        .getData(url)
+        .then((data) => {
+          setData(data);
+        })
+        .catch((error) => setError(error))
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      setSearchInDetails(PARAMSTOSEARCH);
+      useFetch
+        .getData(url)
+        .then((data) => {
+          setDetailSearchList(data);
+        })
+        .catch((error) => setError(error))
+        .finally(() => {
+          setLoading(false);
+        });
+    }
+  };
 
-    setLoading(false);
+  const endSearch = () => {
+    setDetailSearchList([]);
+    setSearchInDetails('');
+    setSearchInHome('');
   };
 
   const updateData = () => {
@@ -82,8 +108,33 @@ const DataProvider = ({ children }) => {
         setData(newArray);
         setPageSearch(pageSearch + 1);
       })
-      .catch((error) => setError(error));
-    setLoading(false);
+      .catch((error) => setError(error))
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  const handleSearchButton = () => {
+    setSearchIsActive(!searchIsActive);
+    endSearch();
+  };
+
+  const handleReturnToHome = () => {
+    setContentViewed({});
+    if (data.length < 30) {
+      setData([]);
+      setLoading(true);
+      useFetch
+        .getData(urlDefault)
+        .then((data) => {
+          setData(data);
+          setPageSearch(pageSearch + 1);
+        })
+        .catch((error) => setError(error))
+        .finally(() => {
+          setLoading(false);
+        });
+    }
   };
 
   const value = {
@@ -92,9 +143,17 @@ const DataProvider = ({ children }) => {
     setError,
     loading,
     contentViewed,
+    setContentViewed,
     handleViewed,
     handleSearch,
+    handleSearchButton,
+    handleReturnToHome,
+    searchIsActive,
+    searchInHome,
+    searchInDetails,
+    detailSearchList,
     updateData,
+    endSearch,
   };
   return <DataContext.Provider value={value}> {children}</DataContext.Provider>;
 };

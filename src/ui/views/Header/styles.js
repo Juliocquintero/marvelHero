@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import { COLORS, SIZES } from '../../../styles/constant';
 
 export const HeaderContainer = styled.header`
   width: 100%;
   min-width: 320px;
-  background-color: #202020;
-  /* background-color: #f0131e; */
-  height: 5.5rem;
+  background-color: ${COLORS.lowBlack};
+  height: calc(${SIZES.xlarge} * 2);
   display: flex;
   justify-content: center;
   align-items: center;

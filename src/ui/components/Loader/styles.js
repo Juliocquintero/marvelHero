@@ -1,17 +1,19 @@
 import styled from 'styled-components';
+import { COLORS, SIZES } from '../../../styles/constant';
 
 export const LoaderContainer = styled.div`
-  display: inline-block;
+  display: block;
   position: relative;
-  width: 20px;
-  height: 40px;
+  width: ${SIZES.xlarge};
+  height: ${SIZES.xxlarge};
+  margin: 0 auto;
 
   & div {
     display: inline-block;
     position: absolute;
     left: 8px;
     width: 10px;
-    background: #00000075;
+    background: ${COLORS.redMarvel};
     animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   }
   & div:nth-child(1) {

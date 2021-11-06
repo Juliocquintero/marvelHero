@@ -4,10 +4,11 @@ import DataContext from '../../../hoc/context/dataContext';
 import { Card, Image, Name } from './styles';
 
 const HeroCard = ({ hero }) => {
-  const { handleViewed } = useContext(DataContext);
+  const { handleViewed, handleSearchButton, searchIsActive } = useContext(DataContext);
   let history = useHistory();
 
   const showDetails = () => {
+    if (searchIsActive) handleSearchButton();
     handleViewed(hero);
     history.push(`/hero/${hero.id}`);
   };
@@ -15,7 +16,9 @@ const HeroCard = ({ hero }) => {
   return (
     <Card onClick={showDetails}>
       <Image src={`${hero?.thumbnail?.path}.${hero?.thumbnail?.extension} `} alt={hero?.name} />
-      <Name href={hero?.urls[0]?.url}> {hero?.name}</Name>
+      <div>
+        <Name> {hero?.name}</Name>
+      </div>
     </Card>
   );
 };

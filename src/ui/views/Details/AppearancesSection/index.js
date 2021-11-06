@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useFetch } from '../../../../hooks/useFetch';
+import Loader from '../../../components/Loader';
 import AppearancesItem from './AppearancesItem';
-import { AppearancesList, ListHeader, ListName } from './styles';
+import { AppearancesList, ListCount, ListHeader, ListName } from './styles';
 
 const AppearancesSection = ({ name, data }) => {
   let { collectionURI, available, setError } = data[name];
@@ -10,12 +11,15 @@ const AppearancesSection = ({ name, data }) => {
   const TS = `1`;
   const URL = `${collectionURI}?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`;
   const [appearances, setAppearances] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     useFetch
       .getData(URL)
       .then((data) => {
         setAppearances(data);
+        setLoading(false);
       })
       .catch((error) => setError(error));
   }, [URL, setError]);
@@ -24,13 +28,14 @@ const AppearancesSection = ({ name, data }) => {
     <div>
       <ListHeader>
         <ListName>{name}</ListName>
-        <span>{available}</span>
+        <ListCount>{available}</ListCount>
       </ListHeader>
       <AppearancesList>
+        {loading && <Loader />}
         {appearances.map((el) => (
           <AppearancesItem data={el} key={el.id} />
         ))}
-        {appearances.length === 0 && <p>Not Data...</p>}
+        {appearances.length === 0 && !loading && <p>Not Data...</p>}
       </AppearancesList>
     </div>
   );

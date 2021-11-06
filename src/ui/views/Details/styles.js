@@ -1,23 +1,25 @@
 import styled from 'styled-components';
+import { COLORS, SIZES } from '../../../styles/constant';
 
 export const DetailsWrapper = styled.div`
-  background-color: rgba(0, 0, 0, 0.95);
-  color: #ffffff;
+  background-color: ${COLORS.black};
+  color: ${COLORS.withe};
   position: relative;
 `;
 
 export const ReturnButton = styled.button`
-  color: #ffffff;
-  font-size: 5rem;
+  color: ${COLORS.lowWithe};
+  font-size: ${SIZES.xxlarge};
   background-color: transparent;
   border: none;
+  outline: none;
   cursor: pointer;
   position: fixed;
   z-index: 999;
-  bottom: 2.5rem;
+  top: 6.5rem;
   right: 1.5rem;
   @media (min-width: 724px) {
     bottom: auto;
-    top: 5.5rem;
+    top: 7.5rem;
   }
 `;
