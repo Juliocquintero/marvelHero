@@ -34,6 +34,7 @@ const DataProvider = ({ children }) => {
       .then((data) => {
         setData(data);
         setPageSearch(pageSearch + 1);
+        console.log(data);
       })
       .catch((error) => setError(error))
       .finally(() => {
