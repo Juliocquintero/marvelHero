@@ -7,13 +7,13 @@ import InputFilter from './Filter';
 import { HeaderContainer } from './styles';
 
 const Header = () => {
-  const { searchIsActive, handleSearchButton } = useContext(DataContext);
+  const { searchIsActive, handleSearchButton, handleReturnToHome } = useContext(DataContext);
   // const hasContent = Object.keys(contentViewed).length !== 0;
 
   return (
     <>
       <HeaderContainer>
-        <MarvelIcon />
+        <MarvelIcon handleReturnToHome={handleReturnToHome} />
         {/* {!Object.keys(contentViewed).length > 0 && (
           <SearchButton
             handleSearchButton={handleSearchButton}

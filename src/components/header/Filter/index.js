@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { useHistory } from 'react-router';
-import { home } from '../../../app';
 import SearchButton from '../../../components/searchButton';
 import DataContext from '../../../hoc/context/dataContext';
 import ListItem from './List_Item';
@@ -9,7 +8,8 @@ import { Filter, FilterWrapper, ListSearch } from './styles';
 const InputFilter = ({ searchIsActive, handleSearchButton }) => {
   const { handleSearch, detailSearchList, searchInHome, searchInDetails } = useContext(DataContext);
   let history = useHistory();
-  let inHome = history.location.pathname === home;
+  let inHome = history.location.pathname === '/';
+  // let inHome = history.location.pathname === home;
 
   const handleSearchByContainer = (e) => {
     handleSearch(e, inHome);

@@ -11,12 +11,12 @@ const App = () => {
   const { contentViewed } = useContext(DataContext);
   const hasContent = Object.keys(contentViewed).length > 0;
   return (
-    <Router>
+    <Router basename={home}>
       <Header />
       <Switch>
-        <Route exact path={home} component={Home} />
-        <Route path={`${home}/character/:id`}>
-          {hasContent ? <HeroDetails /> : <Redirect to={home} />}
+        <Route exact path="/" component={Home} />
+        <Route exact path="/character/:id">
+          {hasContent ? <HeroDetails /> : <Redirect to="/" />}
         </Route>
         <Route path="*" component={PageNotFound} />
       </Switch>

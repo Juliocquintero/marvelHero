@@ -21,10 +21,11 @@ const InfiniteScroll = ({
 
   const handleScrollY = () => {
     const element = document.querySelector(`.${nameList}`);
-    const scrollY = element.scrollTop;
+    const scrollTop = element.scrollTop;
     const scrollHeight = element.scrollHeight;
-    const viewport = window.innerHeight - scrollThreshold;
-    const isFinal = scrollY + viewport >= scrollHeight;
+    const viewportHeight = window.innerHeight;
+
+    const isFinal = scrollTop + viewportHeight >= scrollHeight;
     if (isFinal && hasMore) next();
   };
 

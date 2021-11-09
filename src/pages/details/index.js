@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { home } from '../../app';
 import DataContext from '../../hoc/context/dataContext';
 import AppearancesSection from './AppearancesSection';
 import {
@@ -39,7 +38,7 @@ const HeroDetails = () => {
       <hr />
       <AppearancesSection name="events" data={contentViewed}></AppearancesSection>
       <ReturnButton onClick={returnToHome}>
-        <Link to={`${home}`}>
+        <Link to="/">
           <i className="fas fa-arrow-circle-left" />
         </Link>
       </ReturnButton>

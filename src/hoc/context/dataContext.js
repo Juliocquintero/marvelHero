@@ -18,10 +18,6 @@ const DataProvider = ({ children }) => {
   const HASH = '608a1a977f8dbfb8b36e475a24f088d2';
   const TS = `1`;
   const LIMIT = 50;
-  // const sagaInfinity = {
-  //   id: 29,
-  // };
-
   // const urlSearch =
   //   'https://gateway.marvel.com/v1/public/events/29?ts=1&apikey=17ad198f540be002a0cd5b1d6a016369&hash=608a1a977f8dbfb8b36e475a24f088d2';
 
@@ -120,6 +116,8 @@ const DataProvider = ({ children }) => {
   };
 
   const handleReturnToHome = () => {
+    if (searchIsActive) setSearchIsActive(false);
+    endSearch();
     setContentViewed({});
     if (data.length < 30) {
       setData([]);
