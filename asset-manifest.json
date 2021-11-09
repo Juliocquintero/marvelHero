@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/marvelHero/static/css/main.1b4383e7.chunk.css",
-    "main.js": "/marvelHero/static/js/main.ba3cb2b1.chunk.js",
-    "main.js.map": "/marvelHero/static/js/main.ba3cb2b1.chunk.js.map",
-    "runtime-main.js": "/marvelHero/static/js/runtime-main.1050a4b1.js",
-    "runtime-main.js.map": "/marvelHero/static/js/runtime-main.1050a4b1.js.map",
-    "static/js/2.13cef6d5.chunk.js": "/marvelHero/static/js/2.13cef6d5.chunk.js",
-    "static/js/2.13cef6d5.chunk.js.map": "/marvelHero/static/js/2.13cef6d5.chunk.js.map",
-    "static/js/3.bd3b6880.chunk.js": "/marvelHero/static/js/3.bd3b6880.chunk.js",
-    "static/js/3.bd3b6880.chunk.js.map": "/marvelHero/static/js/3.bd3b6880.chunk.js.map",
+    "main.css": "/marvelHero/static/css/main.9a6091cf.chunk.css",
+    "main.js": "/marvelHero/static/js/main.e62fd477.chunk.js",
+    "main.js.map": "/marvelHero/static/js/main.e62fd477.chunk.js.map",
+    "runtime-main.js": "/marvelHero/static/js/runtime-main.11777b24.js",
+    "runtime-main.js.map": "/marvelHero/static/js/runtime-main.11777b24.js.map",
+    "static/js/2.013e813d.chunk.js": "/marvelHero/static/js/2.013e813d.chunk.js",
+    "static/js/2.013e813d.chunk.js.map": "/marvelHero/static/js/2.013e813d.chunk.js.map",
+    "static/js/3.3c613904.chunk.js": "/marvelHero/static/js/3.3c613904.chunk.js",
+    "static/js/3.3c613904.chunk.js.map": "/marvelHero/static/js/3.3c613904.chunk.js.map",
     "index.html": "/marvelHero/index.html",
-    "static/css/main.1b4383e7.chunk.css.map": "/marvelHero/static/css/main.1b4383e7.chunk.css.map",
-    "static/js/2.13cef6d5.chunk.js.LICENSE.txt": "/marvelHero/static/js/2.13cef6d5.chunk.js.LICENSE.txt"
+    "static/css/main.9a6091cf.chunk.css.map": "/marvelHero/static/css/main.9a6091cf.chunk.css.map",
+    "static/js/2.013e813d.chunk.js.LICENSE.txt": "/marvelHero/static/js/2.013e813d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1050a4b1.js",
-    "static/js/2.13cef6d5.chunk.js",
-    "static/css/main.1b4383e7.chunk.css",
-    "static/js/main.ba3cb2b1.chunk.js"
+    "static/js/runtime-main.11777b24.js",
+    "static/js/2.013e813d.chunk.js",
+    "static/css/main.9a6091cf.chunk.css",
+    "static/js/main.e62fd477.chunk.js"
   ]
 }
