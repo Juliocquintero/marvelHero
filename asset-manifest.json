@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/marvelHero/static/css/main.9a6091cf.chunk.css",
-    "main.js": "/marvelHero/static/js/main.407bd9ac.chunk.js",
-    "main.js.map": "/marvelHero/static/js/main.407bd9ac.chunk.js.map",
+    "main.js": "/marvelHero/static/js/main.c08dcea0.chunk.js",
+    "main.js.map": "/marvelHero/static/js/main.c08dcea0.chunk.js.map",
     "runtime-main.js": "/marvelHero/static/js/runtime-main.11777b24.js",
     "runtime-main.js.map": "/marvelHero/static/js/runtime-main.11777b24.js.map",
-    "static/js/2.013e813d.chunk.js": "/marvelHero/static/js/2.013e813d.chunk.js",
-    "static/js/2.013e813d.chunk.js.map": "/marvelHero/static/js/2.013e813d.chunk.js.map",
+    "static/js/2.2a606ea8.chunk.js": "/marvelHero/static/js/2.2a606ea8.chunk.js",
+    "static/js/2.2a606ea8.chunk.js.map": "/marvelHero/static/js/2.2a606ea8.chunk.js.map",
     "static/js/3.3c613904.chunk.js": "/marvelHero/static/js/3.3c613904.chunk.js",
     "static/js/3.3c613904.chunk.js.map": "/marvelHero/static/js/3.3c613904.chunk.js.map",
     "index.html": "/marvelHero/index.html",
     "static/css/main.9a6091cf.chunk.css.map": "/marvelHero/static/css/main.9a6091cf.chunk.css.map",
-    "static/js/2.013e813d.chunk.js.LICENSE.txt": "/marvelHero/static/js/2.013e813d.chunk.js.LICENSE.txt"
+    "static/js/2.2a606ea8.chunk.js.LICENSE.txt": "/marvelHero/static/js/2.2a606ea8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.11777b24.js",
-    "static/js/2.013e813d.chunk.js",
+    "static/js/2.2a606ea8.chunk.js",
     "static/css/main.9a6091cf.chunk.css",
-    "static/js/main.407bd9ac.chunk.js"
+    "static/js/main.c08dcea0.chunk.js"
   ]
 }
