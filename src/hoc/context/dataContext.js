@@ -140,6 +140,7 @@ const DataProvider = ({ children }) => {
     error,
     setError,
     loading,
+    setLoading,
     contentViewed,
     setContentViewed,
     handleViewed,

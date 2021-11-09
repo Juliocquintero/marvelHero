@@ -39,8 +39,8 @@ export const Hero = styled.figure`
   grid-template-columns: 1fr;
   gap: rem;
   grid-template-rows: ${(props) =>
-    props.descriptionSize > 200
-      ? `1fr minmax(6rem, auto) ${props.descriptionSize / 7}rem`
+    props?.descriptionSize > 200
+      ? `1fr minmax(6rem, auto) ${props?.descriptionSize / 7}rem`
       : '1fr minmax(6rem, auto) 25rem'};
   align-items: center;
   align-content: center;
@@ -103,7 +103,8 @@ export const HeroImage = styled.img`
 export const HeroTitle = styled.h3`
   grid-area: name;
   /* font-size: ${FONTSIZES.heroName}; */
-  font-size: ${(props) => (props.nameLength.length > 30 ? FONTSIZES.title : FONTSIZES.heroName)};
+  font-size: ${(props) =>
+    props?.nameLength?.length > 30 ? FONTSIZES?.title : FONTSIZES?.heroName};
   text-align: center;
   @media (min-width: 400px) {
     font-size: ${FONTSIZES.heroName};

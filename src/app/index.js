@@ -1,22 +1,18 @@
-import { useContext } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../components/header';
-import DataContext from '../hoc/context/dataContext';
 import HeroDetails from '../pages/details';
 import Home from '../pages/home';
 import PageNotFound from '../pages/notFound';
 
 export const home = '/marvelHero';
 const App = () => {
-  const { contentViewed } = useContext(DataContext);
-  const hasContent = Object.keys(contentViewed).length > 0;
   return (
-    <Router basename={home}>
+    <Router>
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/character/:id">
-          {hasContent ? <HeroDetails /> : <Redirect to="/" />}
+          <HeroDetails />
         </Route>
         <Route path="*" component={PageNotFound} />
       </Switch>

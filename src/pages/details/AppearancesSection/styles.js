@@ -7,7 +7,6 @@ export const AppearancesList = styled.div`
   grid-auto-columns: 15rem;
   grid-template-rows: 22.5rem;
   margin: 1rem;
-  padding: 2rem;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior: contain;
