@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/marvelHero/static/css/main.9a6091cf.chunk.css",
-    "main.js": "/marvelHero/static/js/main.139eef49.chunk.js",
-    "main.js.map": "/marvelHero/static/js/main.139eef49.chunk.js.map",
+    "main.js": "/marvelHero/static/js/main.407bd9ac.chunk.js",
+    "main.js.map": "/marvelHero/static/js/main.407bd9ac.chunk.js.map",
     "runtime-main.js": "/marvelHero/static/js/runtime-main.11777b24.js",
     "runtime-main.js.map": "/marvelHero/static/js/runtime-main.11777b24.js.map",
     "static/js/2.013e813d.chunk.js": "/marvelHero/static/js/2.013e813d.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.11777b24.js",
     "static/js/2.013e813d.chunk.js",
     "static/css/main.9a6091cf.chunk.css",
-    "static/js/main.139eef49.chunk.js"
+    "static/js/main.407bd9ac.chunk.js"
   ]
 }
