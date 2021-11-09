@@ -4,12 +4,12 @@ import './styles/index.css';
 
 import reportWebVitals from './reportWebVitals';
 import { DataProvider } from './hoc/context/dataContext';
-import Routes from './Routes';
+import App from './app';
 
 ReactDOM.render(
   <React.StrictMode>
     <DataProvider>
-      <Routes />
+      <App />
     </DataProvider>
   </React.StrictMode>,
   document.getElementById('root')

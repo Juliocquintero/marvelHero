@@ -1,0 +1,27 @@
+.appearances-list {
+  display: grid;
+  /* grid-template-columns: auto; */
+  grid-auto-flow: column;
+  grid-auto-columns: 15rem;
+  grid-template-rows: 22.5rem;
+  /* justify-content: space-around; */
+  margin: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+  scroll-snap-type: x proximity;
+  gap: 1rem;
+}
+.appearances-list::-webkit-scrollbar {
+  height: 1rem; /* width of the entire scrollbar */
+}
+
+.appearances-list::-webkit-scrollbar-track {
+  background: #dddddd80; /* color of the tracking area*/
+}
+
+.appearances-list::-webkit-scrollbar-thumb {
+  background-color: #4c4c4d80; /*color of the scroll thumb*/
+  border-radius: 1px; /* roundness of the scroll thumb */
+  border: 3px solid transparent; /* creates padding around scroll thumb */
+}

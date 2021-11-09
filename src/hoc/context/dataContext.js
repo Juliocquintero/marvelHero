@@ -25,7 +25,7 @@ const DataProvider = ({ children }) => {
   // const urlSearch =
   //   'https://gateway.marvel.com/v1/public/events/29?ts=1&apikey=17ad198f540be002a0cd5b1d6a016369&hash=608a1a977f8dbfb8b36e475a24f088d2';
 
-  const urlDefault = `http://gateway.marvel.com/v1/public/characters?events=29&limit=${LIMIT}&offset=0&ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`;
+  const urlDefault = `https://gateway.marvel.com/v1/public/characters?events=29&limit=${LIMIT}&offset=0&ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`;
 
   useEffect(() => {
     setLoading(true);
@@ -34,7 +34,6 @@ const DataProvider = ({ children }) => {
       .then((data) => {
         setData(data);
         setPageSearch(pageSearch + 1);
-        console.log(data);
       })
       .catch((error) => setError(error))
       .finally(() => {
@@ -50,7 +49,7 @@ const DataProvider = ({ children }) => {
 
   const handleSearch = (e, inHome) => {
     const PARAMSTOSEARCH = e.target.value;
-    const urlWithParams = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${PARAMSTOSEARCH}&ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`;
+    const urlWithParams = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${PARAMSTOSEARCH}&ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`;
     const url = PARAMSTOSEARCH === '' ? urlDefault : urlWithParams;
     setLoading(true);
     if (inHome) {
@@ -89,10 +88,10 @@ const DataProvider = ({ children }) => {
     setLoading(true);
     let url =
       pageSearch < 2
-        ? `http://gateway.marvel.com/v1/public/characters?events=29&limit=${LIMIT}&offset=${
+        ? `https://gateway.marvel.com/v1/public/characters?events=29&limit=${LIMIT}&offset=${
             pageSearch * LIMIT
           }&ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`
-        : `http://gateway.marvel.com/v1/public/characters?limit=${LIMIT}&offset=${
+        : `https://gateway.marvel.com/v1/public/characters?limit=${LIMIT}&offset=${
             pageSearch * LIMIT
           }&ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`;
 
